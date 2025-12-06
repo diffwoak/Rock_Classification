@@ -1,0 +1,39 @@
+============================================================
+模型配置:
+============================================================
+AUGMENTATION_PARAMS: {'random_horizontal_flip': 0.5, 'random_vertical_flip': 0.0, 'random_rotation': 15, 'use_random_resized_crop': True, 'random_resized_crop_scale': (0.8, 1.0), 'color_jitter': {'brightness': 0.2, 'contrast': 0.2, 'saturation': 0.2, 'hue': 0.05}, 'color_jitter_prob': 0.8, 'random_affine': {'degrees': 15, 'translate': (0.1, 0.1), 'scale': (0.9, 1.1)}, 'use_randaugment': True, 'randaugment_num_ops': 2, 'randaugment_magnitude': 9, 'gaussian_blur_prob': 0.3, 'random_erasing_prob': 0.25, 'random_erasing_scale': (0.02, 0.33), 'use_mixup': True, 'mixup_alpha': 0.4}
+BATCH_SIZE: 32
+COSINE_ANNEALING_PARAMS: {'T_max': 10, 'eta_min': 1e-06, 'use_warm_restart': True, 'T_mult': 2}
+CUDA_DEVICES: []
+DATA_DIR: Rock_Data
+DEVICE: cuda
+DROPOUT_RATE: 0.5
+EARLY_STOPPING_PATIENCE: 20
+FINE_TUNE_STRATEGY: keywords
+FREEZE_BACKBONE: False
+IMG_SIZE: 224
+LEARNING_RATE: 0.001
+LOG_PATH: logs/
+MODEL_NAME: vit_b_16
+MODEL_SAVE_PATH: checkpoints/
+NUM_CLASSES: 9
+NUM_EPOCHS: 50
+NUM_WORKERS: 4
+SCHEDULER_PARAMS: {'factor': 0.5, 'patience': 5, 'mode': 'min'}
+SEED: 42
+UNFREEZE_KEYWORDS: ['heads']
+USE_AUGMENTATION: True
+USE_PRETRAINED: True
+USE_SCHEDULER: True
+WEIGHT_DECAY: 0.0001
+
+============================================================
+训练结果:
+============================================================
+test_accuracy: 66.67%
+best_val_accuracy: 71.79%
+model: vit_b_16
+num_classes: 9
+num_epochs_trained: 50
+batch_size: 32
+learning_rate: 0.001
